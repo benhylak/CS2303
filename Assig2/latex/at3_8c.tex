@@ -1,0 +1,108 @@
+\section{at3.\+c File Reference}
+\label{at3_8c}\index{at3.\+c@{at3.\+c}}
+{\ttfamily \#include \char`\"{}Array\+Helper.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}print\+\_\+arrays.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}~(20)
+\item 
+\#define {\bf M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT}~200
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf get\+Random\+Int} (int max)
+\item 
+void {\bf fill\+Array\+Random} (int arr[$\,$], int max\+Size)
+\item 
+int {\bf main} ()
+\begin{DoxyCompactList}\small\item\em Main program for demonstrating arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{at3.\+c@{at3.\+c}!M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}
+\index{M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}!at3.\+c@{at3.\+c}}
+\subsubsection[{M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~(20)}\label{at3_8c_a40af4217190d59d7145e58a278f9f87d}
+Part 4 Assignment 2 for C\+S2303. \begin{DoxyAuthor}{Author}
+Ben Hylak
+\end{DoxyAuthor}
+Generates an array of random integers, prints them, sorts them, and then prints again. 
+
+Referenced by main().
+
+\index{at3.\+c@{at3.\+c}!M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT}}
+\index{M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT@{M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT}!at3.\+c@{at3.\+c}}
+\subsubsection[{M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT~200}\label{at3_8c_aae3c7882a8dff3ae7f655a1eb68e8100}
+
+
+Referenced by fill\+Array\+Random().
+
+
+
+\subsection{Function Documentation}
+\index{at3.\+c@{at3.\+c}!fill\+Array\+Random@{fill\+Array\+Random}}
+\index{fill\+Array\+Random@{fill\+Array\+Random}!at3.\+c@{at3.\+c}}
+\subsubsection[{fill\+Array\+Random(int arr[], int max\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void fill\+Array\+Random (
+\begin{DoxyParamCaption}
+\item[{int}]{arr[$\,$], }
+\item[{int}]{max\+Size}
+\end{DoxyParamCaption}
+)}\label{at3_8c_a8aa7ddd69d26f399df18ae66b8f36271}
+Fills arrays with random ints
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Array to fill \\
+\hline
+{\em max\+Size} & Max size of the array, so the function knows when to stop filling \\
+\hline
+\end{DoxyParams}
+
+
+References get\+Random\+Int(), and M\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+I\+NT.
+
+
+
+Referenced by main().
+
+\index{at3.\+c@{at3.\+c}!get\+Random\+Int@{get\+Random\+Int}}
+\index{get\+Random\+Int@{get\+Random\+Int}!at3.\+c@{at3.\+c}}
+\subsubsection[{get\+Random\+Int(int max)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Random\+Int (
+\begin{DoxyParamCaption}
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\label{at3_8c_ae61510fd70368f6744054237d36007f2}
+Gets random integer Function gets a pseudo random integer from 0 to specific maximum, inclusive. 
+\begin{DoxyParams}{Parameters}
+{\em max} & Maximum random integer can be \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Psuedo random int 
+\end{DoxyReturn}
+
+
+Referenced by fill\+Array\+Random().
+
+\index{at3.\+c@{at3.\+c}!main@{main}}
+\index{main@{main}!at3.\+c@{at3.\+c}}
+\subsubsection[{main()}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{at3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Main program for demonstrating arrays. 
+
+It fills them and prints them. \begin{DoxyReturn}{Returns}
+0, Indicating success. 
+\end{DoxyReturn}
+
+
+References fill\+Array\+Random(), M\+A\+X\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE, print\+\_\+int\+\_\+array(), and quick\+Sort().
+

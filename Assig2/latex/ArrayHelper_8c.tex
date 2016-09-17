@@ -1,0 +1,135 @@
+\section{Array\+Helper.\+c File Reference}
+\label{ArrayHelper_8c}\index{Array\+Helper.\+c@{Array\+Helper.\+c}}
+{\ttfamily \#include \char`\"{}Array\+Helper.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf partition} (int arr[$\,$], int left, int right, int pivot)
+\begin{DoxyCompactList}\small\item\em Partitions a segment of an array around a pivot number and then returns a pivot index that the array is partitioned around. \end{DoxyCompactList}\item 
+void {\bf swap} (int $\ast$element1, int $\ast$element2)
+\begin{DoxyCompactList}\small\item\em Swaps the values of two pointers. \end{DoxyCompactList}\item 
+void {\bf quick\+Sort\+Helper} (int arr[$\,$], int low, int high)
+\begin{DoxyCompactList}\small\item\em Quick sort function that takes low and high bounds for sort. \end{DoxyCompactList}\item 
+void {\bf quick\+Sort} (int arr[$\,$], int size)
+\begin{DoxyCompactList}\small\item\em Sorts an array in ascending order using quick sort algorithm, in place. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Array\+Helper.\+c@{Array\+Helper.\+c}!partition@{partition}}
+\index{partition@{partition}!Array\+Helper.\+c@{Array\+Helper.\+c}}
+\subsubsection[{partition(int arr[], int left, int right, int pivot)}]{\setlength{\rightskip}{0pt plus 5cm}int partition (
+\begin{DoxyParamCaption}
+\item[{int}]{arr[$\,$], }
+\item[{int}]{left, }
+\item[{int}]{right, }
+\item[{int}]{pivot}
+\end{DoxyParamCaption}
+)}\label{ArrayHelper_8c_ac8e619b345f42d3add41f62f04b9536b}
+
+
+Partitions a segment of an array around a pivot number and then returns a pivot index that the array is partitioned around. 
+
+\begin{DoxyAuthor}{Author}
+Ben Hylak
+\end{DoxyAuthor}
+Array Helper class. Contains functions to sort an array using Quick Sort algorithm.
+\begin{DoxyParams}{Parameters}
+{\em left} & Lower bound of segment \\
+\hline
+{\em high} & Upper bound of segment \\
+\hline
+{\em Pivot} & value used to split segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of new pivot 
+\end{DoxyReturn}
+
+
+References swap().
+
+
+
+Referenced by quick\+Sort\+Helper().
+
+\index{Array\+Helper.\+c@{Array\+Helper.\+c}!quick\+Sort@{quick\+Sort}}
+\index{quick\+Sort@{quick\+Sort}!Array\+Helper.\+c@{Array\+Helper.\+c}}
+\subsubsection[{quick\+Sort(int arr[], int size)}]{\setlength{\rightskip}{0pt plus 5cm}void quick\+Sort (
+\begin{DoxyParamCaption}
+\item[{int}]{arr[$\,$], }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\label{ArrayHelper_8c_ad1b08c22ea8a5ab75f8d6c2b8c122f5a}
+
+
+Sorts an array in ascending order using quick sort algorithm, in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Array to be sorted \\
+\hline
+{\em size} & Size of array \\
+\hline
+\end{DoxyParams}
+
+
+References quick\+Sort\+Helper().
+
+
+
+Referenced by main().
+
+\index{Array\+Helper.\+c@{Array\+Helper.\+c}!quick\+Sort\+Helper@{quick\+Sort\+Helper}}
+\index{quick\+Sort\+Helper@{quick\+Sort\+Helper}!Array\+Helper.\+c@{Array\+Helper.\+c}}
+\subsubsection[{quick\+Sort\+Helper(int arr[], int low, int high)}]{\setlength{\rightskip}{0pt plus 5cm}void quick\+Sort\+Helper (
+\begin{DoxyParamCaption}
+\item[{int}]{arr[$\,$], }
+\item[{int}]{low, }
+\item[{int}]{high}
+\end{DoxyParamCaption}
+)}\label{ArrayHelper_8c_acc4c626a8eb8a4326b20507069e0e91c}
+
+
+Quick sort function that takes low and high bounds for sort. 
+
+(Used for sorting segments of an array) Sorts in place. 
+\begin{DoxyParams}{Parameters}
+{\em arr} & Array that segment belongs to \\
+\hline
+{\em low} & Lower bound of segment \\
+\hline
+{\em high} & Upper bound of segment \\
+\hline
+\end{DoxyParams}
+
+
+References partition().
+
+
+
+Referenced by quick\+Sort().
+
+\index{Array\+Helper.\+c@{Array\+Helper.\+c}!swap@{swap}}
+\index{swap@{swap}!Array\+Helper.\+c@{Array\+Helper.\+c}}
+\subsubsection[{swap(int $\ast$element1, int $\ast$element2)}]{\setlength{\rightskip}{0pt plus 5cm}void swap (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{element1, }
+\item[{int $\ast$}]{element2}
+\end{DoxyParamCaption}
+)}\label{ArrayHelper_8c_ad13ebc533901b9baf0025911c8bab4cf}
+
+
+Swaps the values of two pointers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element1} & The first pointer \\
+\hline
+{\em element2} & The second pointer \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by partition().
+

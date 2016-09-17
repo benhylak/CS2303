@@ -1,0 +1,90 @@
+\section{at2.\+c File Reference}
+\label{at2_8c}\index{at2.\+c@{at2.\+c}}
+{\ttfamily \#include \char`\"{}Array\+Helper.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}print\+\_\+arrays.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}~(10)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf fill\+Array} (int argc, const char $\ast$argv[$\,$], int arr[$\,$], int max\+Size)
+\begin{DoxyCompactList}\small\item\em Function to fill array with integer data from command line data. \end{DoxyCompactList}\item 
+int {\bf main} (int argc, const char $\ast$argv[$\,$])
+\begin{DoxyCompactList}\small\item\em Main program for demonstrating arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Part 2+3 of Assignment 2 for C\+S2303.
+
+\begin{DoxyAuthor}{Author}
+Ben Hylak
+\end{DoxyAuthor}
+Takes a list of integers from the command line, prints the inputted numbers, sorts the numbers (quicksort) and then prints again. 
+
+\subsection{Macro Definition Documentation}
+\index{at2.\+c@{at2.\+c}!A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE@{A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}
+\index{A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE@{A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}!at2.\+c@{at2.\+c}}
+\subsubsection[{A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~(10)}\label{at2_8c_a7ec751f49d6391028a94f1419374c2fa}
+
+
+Referenced by main().
+
+
+
+\subsection{Function Documentation}
+\index{at2.\+c@{at2.\+c}!fill\+Array@{fill\+Array}}
+\index{fill\+Array@{fill\+Array}!at2.\+c@{at2.\+c}}
+\subsubsection[{fill\+Array(int argc, const char $\ast$argv[], int arr[], int max\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}int fill\+Array (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{const char $\ast$}]{argv[$\,$], }
+\item[{int}]{arr[$\,$], }
+\item[{int}]{max\+Size}
+\end{DoxyParamCaption}
+)}\label{at2_8c_ab088a47367c2fbc7a31440424d2b17ba}
+
+
+Function to fill array with integer data from command line data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count from command line \\
+\hline
+{\em argv} & Arguments from command line \\
+\hline
+{\em arr} & Array to fill \\
+\hline
+{\em max\+Size} & Max size of the array, so the function knows when to stop filling \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number elements were inserted into the array 
+\end{DoxyReturn}
+
+
+Referenced by main().
+
+\index{at2.\+c@{at2.\+c}!main@{main}}
+\index{main@{main}!at2.\+c@{at2.\+c}}
+\subsubsection[{main(int argc, const char $\ast$argv[])}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{const char $\ast$}]{argv[$\,$]}
+\end{DoxyParamCaption}
+)}\label{at2_8c_ac0f2228420376f4db7e1274f2b41667c}
+
+
+Main program for demonstrating arrays. 
+
+It fills them and prints them. \begin{DoxyReturn}{Returns}
+0, Indicating success. 
+\end{DoxyReturn}
+
+
+References A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE, fill\+Array(), print\+\_\+int\+\_\+array(), and quick\+Sort().
+

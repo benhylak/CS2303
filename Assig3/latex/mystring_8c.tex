@@ -1,0 +1,127 @@
+\section{mystring.\+c File Reference}
+\label{mystring_8c}\index{mystring.\+c@{mystring.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}mystring.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf mystrdup} (const char $\ast$src)
+\item 
+char $\ast$ {\bf move\+Pointer\+To\+Terminator} (char $\ast$str1)
+\item 
+int {\bf my\+Str\+Len} (const char $\ast$src)
+\item 
+const char $\ast$ {\bf my\+Str\+Cpy} (const char $\ast$dest, const char $\ast$src)
+\item 
+const char $\ast$ {\bf my\+Str\+Cat} (const char $\ast$dest, const char $\ast$src)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{mystring.\+c@{mystring.\+c}!move\+Pointer\+To\+Terminator@{move\+Pointer\+To\+Terminator}}
+\index{move\+Pointer\+To\+Terminator@{move\+Pointer\+To\+Terminator}!mystring.\+c@{mystring.\+c}}
+\subsubsection[{move\+Pointer\+To\+Terminator(char $\ast$str1)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ move\+Pointer\+To\+Terminator (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str1}
+\end{DoxyParamCaption}
+)}\label{mystring_8c_a112a24636ba1db0053f8e3792c9da813}
+! Increments a char pointer until it equals the null terminator, then returns pointer 
+\begin{DoxyParams}{Parameters}
+{\em str1} & pointer to char array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to null terminator 
+\end{DoxyReturn}
+
+
+Referenced by my\+Str\+Cat().
+
+\index{mystring.\+c@{mystring.\+c}!my\+Str\+Cat@{my\+Str\+Cat}}
+\index{my\+Str\+Cat@{my\+Str\+Cat}!mystring.\+c@{mystring.\+c}}
+\subsubsection[{my\+Str\+Cat(const char $\ast$dest, const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ my\+Str\+Cat (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dest, }
+\item[{const char $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{mystring_8c_abbead0caae620ea01708bc4e3a8e1410}
+
+
+References move\+Pointer\+To\+Terminator().
+
+
+
+Referenced by main().
+
+\index{mystring.\+c@{mystring.\+c}!my\+Str\+Cpy@{my\+Str\+Cpy}}
+\index{my\+Str\+Cpy@{my\+Str\+Cpy}!mystring.\+c@{mystring.\+c}}
+\subsubsection[{my\+Str\+Cpy(const char $\ast$dest, const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ my\+Str\+Cpy (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dest, }
+\item[{const char $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{mystring_8c_a9c7e37ff04b6e24a101de905c6df27d2}
+! Copies the characers from src into destination, including the null terminator.
+
+The strcpy() function copies the string pointed to by src, including the terminating null byte (\textquotesingle{}\textbackslash{}0\textquotesingle{}), to the buffer pointed to by dest. The strings may not overlap, and the destination string dest must be large enough to receive the copy. Beware of buffer overruns!
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Array copied into \\
+\hline
+{\em src} & Array copied from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ Array copied into 
+\end{DoxyReturn}
+
+
+Referenced by main().
+
+\index{mystring.\+c@{mystring.\+c}!mystrdup@{mystrdup}}
+\index{mystrdup@{mystrdup}!mystring.\+c@{mystring.\+c}}
+\subsubsection[{mystrdup(const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mystrdup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{mystring_8c_a148a52c665d88f52fb4995338a319d3c}
+\doxyref{mystring.\+c}{p.}{mystring_8c} \begin{DoxyAuthor}{Author}
+Mike Ciaraldi My own versions of some of the C-\/style string functions Duplicates a C-\/style string. 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Pointer to string to be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to freshly-\/allocated string containing a duplicate of src or null if no memory is available 
+\end{DoxyReturn}
+
+
+Referenced by main().
+
+\index{mystring.\+c@{mystring.\+c}!my\+Str\+Len@{my\+Str\+Len}}
+\index{my\+Str\+Len@{my\+Str\+Len}!mystring.\+c@{mystring.\+c}}
+\subsubsection[{my\+Str\+Len(const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}int my\+Str\+Len (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{src}
+\end{DoxyParamCaption}
+)}\label{mystring_8c_a0f820b15c1cbfff463c23c203861dd43}
+! Counts the number of characters in a string excluding the null terminator. 
+\begin{DoxyParams}{Parameters}
+{\em src} & String to count characters of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of string 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+string must have null terminator 
+\end{DoxyWarning}
+
+
+Referenced by main().
+

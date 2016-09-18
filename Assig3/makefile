@@ -21,3 +21,12 @@ docs:
 	doxygen
 	chmod a+r html/*
 	cp -p html/* ~/public_html/cs2303assig3
+
+
+#make docs and commit to git
+gitdocs:
+	make
+	make docs
+	git add *
+	git commit -a
+	

@@ -5,26 +5,43 @@
 \item 
 char $\ast$ {\bf mystrdup} (const char $\ast$src)
 \item 
-const char $\ast$ {\bf my\+Str\+Cat} (const char $\ast$dest, const char $\ast$src)
+char $\ast$ {\bf my\+Str\+Cat} (char $\ast$dest, const char $\ast$src)
 \item 
 int {\bf my\+Str\+Len} (const char $\ast$src)
 \item 
-const char $\ast$ {\bf my\+Str\+Cpy} (const char $\ast$dest, const char $\ast$src)
+char $\ast$ {\bf my\+Str\+Cpy} (char $\ast$dest, const char $\ast$src)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
 \index{mystring.\+h@{mystring.\+h}!my\+Str\+Cat@{my\+Str\+Cat}}
 \index{my\+Str\+Cat@{my\+Str\+Cat}!mystring.\+h@{mystring.\+h}}
-\subsubsection[{my\+Str\+Cat(const char $\ast$dest, const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ my\+Str\+Cat (
+\subsubsection[{my\+Str\+Cat(char $\ast$dest, const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+Str\+Cat (
 \begin{DoxyParamCaption}
-\item[{const char $\ast$}]{dest, }
+\item[{char $\ast$}]{dest, }
 \item[{const char $\ast$}]{src}
 \end{DoxyParamCaption}
-)}\label{mystring_8h_abbead0caae620ea01708bc4e3a8e1410}
+)}\label{mystring_8h_a8476a9027282e2d497ec62ad366ea1b1}
+! Appends the src string to the dest string
+
+Appends the src string to the dest string, overwriting the terminating null byte (\textquotesingle{}\textbackslash{}0\textquotesingle{}) at the end of dest, and then adds a terminating null byte.
 
 
-References move\+Pointer\+To\+Terminator().
+\begin{DoxyParams}{Parameters}
+{\em dest} & String that will have src appended to the end \\
+\hline
+{\em src} & String that will be appended to the end of dest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to result string 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If dest is not large enough, program behavior is unpredictable; buffer overruns are a favorite avenue for attacking secure programs 
+\end{DoxyWarning}
+
+
+References my\+Str\+Len().
 
 
 
@@ -32,26 +49,25 @@ Referenced by main().
 
 \index{mystring.\+h@{mystring.\+h}!my\+Str\+Cpy@{my\+Str\+Cpy}}
 \index{my\+Str\+Cpy@{my\+Str\+Cpy}!mystring.\+h@{mystring.\+h}}
-\subsubsection[{my\+Str\+Cpy(const char $\ast$dest, const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ my\+Str\+Cpy (
+\subsubsection[{my\+Str\+Cpy(char $\ast$dest, const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+Str\+Cpy (
 \begin{DoxyParamCaption}
-\item[{const char $\ast$}]{dest, }
+\item[{char $\ast$}]{dest, }
 \item[{const char $\ast$}]{src}
 \end{DoxyParamCaption}
-)}\label{mystring_8h_a9c7e37ff04b6e24a101de905c6df27d2}
-! Copies the characers from src into destination, including the null terminator.
-
-The strcpy() function copies the string pointed to by src, including the terminating null byte (\textquotesingle{}\textbackslash{}0\textquotesingle{}), to the buffer pointed to by dest. The strings may not overlap, and the destination string dest must be large enough to receive the copy. Beware of buffer overruns!
-
-
+)}\label{mystring_8h_a3b7fc502d0701ab4ded05a35a8cdc53b}
+Copies string starting at address of dest 
 \begin{DoxyParams}{Parameters}
-{\em dest} & Array copied into \\
+{\em dest} & Address string is copied into \\
 \hline
-{\em src} & Array copied from \\
+{\em src} & String to copy \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-char$\ast$ Array copied into 
+address of copied string 
 \end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+src must be null terminated 
+\end{DoxyWarning}
 
 
 Referenced by main().
@@ -85,21 +101,21 @@ Referenced by main().
 \index{my\+Str\+Len@{my\+Str\+Len}!mystring.\+h@{mystring.\+h}}
 \subsubsection[{my\+Str\+Len(const char $\ast$src)}]{\setlength{\rightskip}{0pt plus 5cm}int my\+Str\+Len (
 \begin{DoxyParamCaption}
-\item[{const char $\ast$}]{src}
+\item[{const char $\ast$}]{dest}
 \end{DoxyParamCaption}
 )}\label{mystring_8h_a0f820b15c1cbfff463c23c203861dd43}
-! Counts the number of characters in a string excluding the null terminator. 
+Counts the length of a string 
 \begin{DoxyParams}{Parameters}
-{\em src} & String to count characters of \\
+{\em dest} & String to count \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-length of string 
+Length of String 
 \end{DoxyReturn}
 \begin{DoxyWarning}{Warning}
-string must have null terminator 
+string must be null terminated 
 \end{DoxyWarning}
 
 
-Referenced by main().
+Referenced by main(), and my\+Str\+Cat().
 

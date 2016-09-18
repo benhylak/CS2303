@@ -119,7 +119,7 @@ void printCarArr(Car** carArr, int count)
  
 Car** copy_car_array(Car** oldCarArr, int count)
 {
-    Car** newCarArr = malloc(sizeof(Car*) * count);
+    Car** newCarArr = calloc(count, sizeof(Car*));
 
     for(int i=0; i<count; i++)
     {
@@ -129,3 +129,37 @@ Car** copy_car_array(Car** oldCarArr, int count)
     return newCarArr;
 }
 
+/** Makes a deep copy of an array of pointers to car structs
+ *
+ * Makes a deep copy by depublicating the structs and then filling a new array with pointers
+ * to the new structs
+ *
+ * @param oldCarArr Array to be deep copied
+ * @param count Number of car pointers to be deep copied
+ * @return Address of new array
+ */
+Car** copy_car_array_deep(Car** oldCarArr, int count)
+{
+    size_t arrMemSize = count * sizeof(Car*); //size in memory is the size of a Car pointer * num of pointers
+    Car** newCarArr= (Car**)malloc(arrMemSize);
+
+    memcpy(newCarArr, oldCarArr, arrMemSize);
+
+    return newCarArr;
+}
+
+/** Frees an array of pointers to car structs
+ *
+ * @param oldCarArr Array of pointers to car structs
+ * @param count Count of pointers in array
+ */
+void freeCarArr(Car** oldCarArr, int count)
+{
+    int freed = 0;
+
+    while(freed<count)
+    {
+        free(*(oldCarArr++));
+        freed++;
+    }
+}

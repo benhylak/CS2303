@@ -23,8 +23,11 @@ Car* make_car(unsigned int year, unsigned int price, unsigned int seats, char* m
 Car* make_rand_car();
 Car** make_car_array(int n);
 Car** copy_car_array(Car** oldCarArr, int count);
+Car** copy_car_array_deep(Car** oldCarArr, int count);
+void deepCpy();
 void printCar(Car* inputCar);
 void printCarArr(Car** carArr, int count);
+void freeCarArr(Car** carArr, int count);
 
 #endif
 

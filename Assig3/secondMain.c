@@ -23,5 +23,12 @@ int main()
     Car** carArr2 = copy_car_array(carArr, 2);
     printCarArr(carArr, 2);
 
+    Car** carArrNew = make_car_array(3);
+
+    Car** carArrDeepCpy = copy_car_array_deep(carArrNew, 3);
+
+    printCarArr(carArrNew, 3);
+    printCarArr(carArrDeepCpy, 3);
+
     return 0; //success
 }

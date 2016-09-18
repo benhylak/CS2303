@@ -1,12 +1,60 @@
 /** mystring.c
- * @author Mike Ciaraldi
- * My own versions of some of the C-style string functions
+ * @author Ben Hylak
+ * Useful functions for strings/chars
 */
 #include <string.h>
 #include <stdlib.h>
 // stdlib.h is needed to use malloc()
 #include "mystring.h"
 #include <stdio.h>
+
+#define MIN_ASCII_PRINTABLE 33
+#define MAX_ASCII_PRINTABLE 126
+
+/**Gets random integer between min and max
+ *
+ * @param min Minimum random integer (floor)
+ * @param max Maximum random integer (ceiling)
+ */
+int getRandomInt(int min, int max)
+{
+    return (rand() % (max+1-min)) + min; //remainder can never be > max-min, and max-min + min is max
+}
+
+/**Return single random character ascii 41-176
+ *
+ * @return random ascii character between dec 41-176 (printable chars)
+ * @warning random generator must be seeded before use using srand or similar 
+ */
+
+char getRandomChar()
+{
+    return (char) getRandomInt(MIN_ASCII_PRINTABLE, MAX_ASCII_PRINTABLE);
+}
+
+/*! Create random string of specified length
+ *
+ * Creates random string with 'length' characters. This function uses the getRandomChar()
+ * function also in this file. 
+ *
+ * @param length Length of random string
+ * @return Pointer to random string.
+ * @warning Random generator must be seeded before use with srand or similar. See man rand
+ */
+
+char* getRandomString(int length)
+{
+    char* newStr = malloc(length*sizeof(char) +1); //size of string +1 for terminator
+
+    for(int i=0; i<length-1; i++)
+    {
+        newStr[i] = getRandomChar();
+    }
+
+    newStr[length] = '\0'; //null terminate string. Size of Array is length+1, so length is last element
+
+    return newStr;
+}
 
 /** Duplicates a C-style string.
  @param src Pointer to string to be copied

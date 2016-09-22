@@ -1,4 +1,4 @@
-all:ctest
+all:ctest secondMain
 
 # Executable depends on the two object files
 ctest: ctest.o mystring.o 
@@ -13,7 +13,16 @@ mystring.o: mystring.c mystring.h
 	gcc -g -c mystring.c
 
 clean: 
-	rm -f mystring.o ctest.o ctest
+	rm -f *.o ctest secondMain
+
+secondMain: secondMain.o StructHelper.o mystring.o
+	gcc -g secondMain.o StructHelper.o mystring.o -o secondMain
+
+secondMain.o: secondMain.c StructHelper.h mystring.h
+	gcc -g -c secondMain.c
+
+StructHelper.o: StructHelper.c StructHelper.h
+	gcc -g -c StructHelper.c
 
 # Typing "make docs" will generate Doxygen files, set proper permissions,
 # and copy into ~/public_html/cs2301assig3 .
@@ -23,10 +32,8 @@ docs:
 	cp -p html/* ~/public_html/cs2303assig3
 
 
-#make docs and commit to git
-gitdocs:
-	make
-	make docs
-	git add *
-	git commit -a
+#add all files and commit to git
+git:
+	git add -A  
+	git commit -m "$m" #usage: make git m="comment"
 	

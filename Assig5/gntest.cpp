@@ -9,17 +9,8 @@
  */
 int main(int argc, char* argv[]) {
 
-  GeneralNumber* g1 = new GeneralNumber();
-  char* gs = g1->toString(); // Generate string version.
-  printf("%s\n", gs); 
-  // We don't need the string any more.
-  free(gs);
-  gs = g1->foo(); // Test non-virtual function
-  printf("%s\n", gs); 
-  free(gs);
-
   GeneralLong* g2 = new GeneralLong(2000L);
-  gs = g2->toString(); // Generate string version.
+  char* gs = g2->toString(); // Generate string version.
   printf("%s\n", gs); 
   free(gs);
   gs = g2->foo(); // Test non-virtual function
@@ -95,11 +86,24 @@ int main(int argc, char* argv[]) {
   printf("Added GeneralLong to Rational: %s\n", gs);
 
   GeneralLong* g13 = (GeneralLong*)g11->sumWith(g10);
-  gs= g13->toString();
+  gs = g13->toString();
   printf("Added Rational to GeneralLong: %s\n", gs);
 
+  GeneralNumber* parsedRational = GeneralNumber::parse(" [ 300 / 500 ]");
+  gs = parsedRational->toString();
+  printf("Parsed result of [ 300 / 500 ]: %s\n", gs);
+
+  GeneralNumber* parsedLong = GeneralNumber::parse("5000");
+  gs = parsedLong->toString();
+  printf("Parsed result of 5000: %s\n", gs);
+
+  GeneralNumber* parsedJunk = GeneralNumber::parse("Junk");
+
+  if(parsedJunk == NULL) printf("Impossible Parse returned NULL (Yay!)\n");
+  else printf("Impossible Parse returned %s\n", parsedJunk->toString());
+
+//  printf("Impossible Parse (Should print NULL): %s\n", gs);
   // We don't need the objects any more.
-  delete(g1);
   delete(g2);
   delete(g3);
   delete(g4);

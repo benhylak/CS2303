@@ -34,34 +34,6 @@ long GCD(long A, long B)
 
     return commonSign*gcd_Helper(labs(A),labs(B));
 }
-
-/** Default constructor for GeneralNumber
- */
-GeneralNumber::GeneralNumber() {
-  // Just a placeholder for now -- nothing to do.
-}
-
-/** Default sumWith function. Just returns empty GeneralNumber 
- * when called in the GeneralNumber class
- *
- * @param GeneralNumber* number to sum
- * @return Empty GeneralNumber
- */
-GeneralNumber* GeneralNumber::sumWith(GeneralNumber* num)
-{
-    GeneralNumber* g = new GeneralNumber();
-    return g;
-}
-
-/** Generates a printable representation of the object.
- * @return Freshly-allocated C-stype string
- */
-char* GeneralNumber::toString() const {
-  char* rep; // String representation of the vlaue.
-  rep = strdup("Never instantiate a plain GeneralNumber!");
-  return rep;
-}
-
 /** Demonstrates a non-virtual function.
  * @return Freshly-allocated C-stype string
  */
@@ -69,26 +41,6 @@ char* GeneralNumber::foo() const {
   char* rep = strdup("This is the output of foo() for GeneralNumber!");
   return rep;
 }
-
-/** Generates an equivalent GeneralLong
- * @return Pointer to a freshly-allocated GeneralLong object
- */
-GeneralLong* GeneralNumber::toGeneralLong() const {
-  GeneralLong* g = new GeneralLong();
-  return g;
-}
-
-/** Generates an equivalent GeneralRational
- * @return Pointer to a freshly-allocated GeneralRational object
- */
-GeneralRational* GeneralNumber::toGeneralRational() const {
-  GeneralRational* g = new GeneralRational();
-  return g;
-}
-
-
-
-
 
 
 /** Default constructor for GeneralLong 

@@ -15,13 +15,13 @@ class GeneralRational;
 
 class GeneralNumber {
  public:
-  GeneralNumber();
-  virtual char* toString() const;
+  virtual char* toString() const = 0;
   char* foo() const; // Not a virtual function!
-  virtual GeneralLong* toGeneralLong() const;
-  virtual GeneralRational* toGeneralRational() const;
+  virtual GeneralLong* toGeneralLong() const = 0;
+  virtual GeneralRational* toGeneralRational() const = 0;
+  virtual GeneralNumber* sumWith(GeneralNumber* num) = 0;
 
-  virtual GeneralNumber* sumWith(GeneralNumber* num);
+  static GeneralNumber* parse(const char* s);
 };
 /***************************************/
 

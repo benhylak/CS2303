@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "GeneralNumber.h"
+#include <iostream>
+#include <string>
 
 // Static methods:
 
@@ -12,25 +14,46 @@
  */
 GeneralNumber* GeneralNumber::parse(const char* s) {
 
-  GeneralNumber* newobj = NULL;
-  long n1, n2; // Numbers parsed from the command line
-  int nconv; // Number of successful conversions
-  
-  // Try to match the input format, then create the right type object.
+    GeneralNumber* newobj = NULL;
+    long n1, n2; // Numbers parsed from the command line
+    int nconv; // Number of successful conversions
 
-  // First look for GeneralRational format
-  nconv = sscanf(s, " [ %ld / %ld ]", &n1, &n2); 
-  if (nconv == 2) { // Recognized!
-    newobj = new GeneralRational(n1, n2);
-    return newobj;
-  }
+    // Try to match the input format, then create the right type object.
 
-  // Next look for GeneralLong format
-  nconv = sscanf(s, "%ld", &n1); 
-  if (nconv == 1) { // Recognized!
-    newobj = new GeneralLong(n1);
+    // First look for GeneralRational format
+    nconv = sscanf(s, "[ %ld / %ld ]", &n1, &n2); 
+    if (nconv == 2) { // Recognized!
+        newobj = new GeneralRational(n1, n2);
+        return newobj;
+    }
+
+
+    bool isDouble = false;
+
+    for(size_t i=0; i<strlen(s); i++)
+    {
+        if(s[i] == '.') isDouble = true;
+    }
+
+    if(isDouble)
+    {
+        std::string strRes = s; 
+        double res = stod(strRes);
+
+        newobj = new GeneralDouble(res);
+    }
+    else
+    {
+        long res; 
+
+        nconv = sscanf(s, "%ld", &res);
+
+        if(nconv==1)
+        {
+            newobj = new GeneralLong(res);
+        }
+    }
+
     return newobj;
-  }
-  
-  return NULL; // Nothing recognized
+
 }

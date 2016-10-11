@@ -44,7 +44,7 @@ char getRandomChar()
 
 char* getRandomString(int length)
 {
-    char* newStr = malloc(length*sizeof(char) +1); //size of string +1 for terminator
+    char* newStr = (char*)malloc(length*sizeof(char) +1); //size of string +1 for terminator
 
     for(int i=0; i<length-1; i++)
     {

@@ -1,0 +1,32 @@
+This is my submission for Assignment6.
+
+This submission contains the following programs:
+
+objstacktest
+    -Usage
+        ./objstacktest
+    -Purpose
+        Tests custom stack implementation
+
+objqueuetest
+    -Usage
+        ./objqueuetest
+    -Purpose
+        Tests custom queue implementaion (objqueue)
+
+treetest
+    -Usage
+        ./treetest
+    -Purpose
+        Tests custom tree class (tree.cpp and Tnode.cpp)
+
+treetestrand
+    -Usage
+        ./treetestrand
+    -Purpose
+        Tests custom tree class (tree.cpp and Tnode.cpp). Adds multiple random strings and then prints        them sorted in ascending order. Program then frees the tree when finished.
+
+I made the following design choice:
+
+1. Duplicate strings added to the tree are ignored.
+

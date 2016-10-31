@@ -1,0 +1,186 @@
+\section{General\+Long Class Reference}
+\label{classGeneralLong}\index{General\+Long@{General\+Long}}
+
+
+{\ttfamily \#include $<$General\+Number.\+h$>$}
+
+Inheritance diagram for General\+Long\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGeneralLong}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf General\+Long} ()
+\item 
+{\bf General\+Long} (long {\bf value})
+\item 
+char $\ast$ {\bf to\+String} () const 
+\item 
+char $\ast$ {\bf foo} () const 
+\item 
+{\bf General\+Long} $\ast$ {\bf to\+General\+Long} () const 
+\item 
+{\bf General\+Rational} $\ast$ {\bf to\+General\+Rational} () const 
+\item 
+long {\bf get\+Value} ()
+\item 
+{\bf General\+Number} $\ast$ {\bf sum\+With} ({\bf General\+Number} $\ast$num)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long {\bf value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{General\+Long@{General\+Long}!General\+Long@{General\+Long}}
+\index{General\+Long@{General\+Long}!General\+Long@{General\+Long}}
+\subsubsection[{General\+Long()}]{\setlength{\rightskip}{0pt plus 5cm}General\+Long\+::\+General\+Long (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGeneralLong_a9ba8d9844c5826284493301e3834e0fa}
+Default constructor for \doxyref{General\+Long}{p.}{classGeneralLong} \index{General\+Long@{General\+Long}!General\+Long@{General\+Long}}
+\index{General\+Long@{General\+Long}!General\+Long@{General\+Long}}
+\subsubsection[{General\+Long(long value)}]{\setlength{\rightskip}{0pt plus 5cm}General\+Long\+::\+General\+Long (
+\begin{DoxyParamCaption}
+\item[{long}]{value}
+\end{DoxyParamCaption}
+)}\label{classGeneralLong_ac76419bcc51c55390d4b886f4c1ea828}
+Constructor for \doxyref{General\+Long}{p.}{classGeneralLong} 
+\begin{DoxyParams}{Parameters}
+{\em value} & Number to store in the object \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{General\+Long@{General\+Long}!foo@{foo}}
+\index{foo@{foo}!General\+Long@{General\+Long}}
+\subsubsection[{foo() const }]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ General\+Long\+::foo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classGeneralLong_a9c7e995eb89b06f3db51c0b5faaa272c}
+Demonstrates a non-\/virtual function. \begin{DoxyReturn}{Returns}
+Freshly-\/allocated C-\/stype string 
+\end{DoxyReturn}
+
+
+Referenced by main().
+
+\index{General\+Long@{General\+Long}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!General\+Long@{General\+Long}}
+\subsubsection[{get\+Value()}]{\setlength{\rightskip}{0pt plus 5cm}long General\+Long\+::get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGeneralLong_af25d9a4f795b2046b3d0fb147b588101}
+Gets the value of this general long
+
+\begin{DoxyReturn}{Returns}
+value of general long 
+\end{DoxyReturn}
+
+
+Referenced by sum\+With().
+
+\index{General\+Long@{General\+Long}!sum\+With@{sum\+With}}
+\index{sum\+With@{sum\+With}!General\+Long@{General\+Long}}
+\subsubsection[{sum\+With(\+General\+Number $\ast$num)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf General\+Number} $\ast$ General\+Long\+::sum\+With (
+\begin{DoxyParamCaption}
+\item[{{\bf General\+Number} $\ast$}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGeneralLong_a1f079c0275301d4fd4332d481cc5787f}
+Sums two numbers of type \doxyref{General\+Number}{p.}{classGeneralNumber} together
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & pointer to \doxyref{General\+Number}{p.}{classGeneralNumber} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{General\+Long}{p.}{classGeneralLong} holding resutls of summation 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf General\+Number} \doxyref{}{p.}{classGeneralNumber_ab40df9cc601a20e8f08d7c2c50e0875e}.
+
+
+
+References get\+Value(), and General\+Number\+::to\+General\+Long().
+
+
+
+Referenced by main().
+
+\index{General\+Long@{General\+Long}!to\+General\+Long@{to\+General\+Long}}
+\index{to\+General\+Long@{to\+General\+Long}!General\+Long@{General\+Long}}
+\subsubsection[{to\+General\+Long() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf General\+Long} $\ast$ General\+Long\+::to\+General\+Long (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGeneralLong_a67fdd908d3af4a8fefc0657f2eb86dd0}
+Generates an equivalent \doxyref{General\+Long}{p.}{classGeneralLong} \begin{DoxyReturn}{Returns}
+Pointer to a freshly-\/allocated \doxyref{General\+Long}{p.}{classGeneralLong} object 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf General\+Number} \doxyref{}{p.}{classGeneralNumber_a3257176764dd42f884f3d32bc26cd508}.
+
+\index{General\+Long@{General\+Long}!to\+General\+Rational@{to\+General\+Rational}}
+\index{to\+General\+Rational@{to\+General\+Rational}!General\+Long@{General\+Long}}
+\subsubsection[{to\+General\+Rational() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf General\+Rational} $\ast$ General\+Long\+::to\+General\+Rational (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGeneralLong_aa983396c8843991c6bbea52b1d22e51b}
+Generates an equivalent \doxyref{General\+Rational}{p.}{classGeneralRational} \begin{DoxyReturn}{Returns}
+Pointer to a freshly-\/allocated \doxyref{General\+Rational}{p.}{classGeneralRational} object 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf General\+Number} \doxyref{}{p.}{classGeneralNumber_ae92a1bfb38c40bcda30fd93335a4ea54}.
+
+
+
+Referenced by main().
+
+\index{General\+Long@{General\+Long}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!General\+Long@{General\+Long}}
+\subsubsection[{to\+String() const }]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ General\+Long\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGeneralLong_ae3afbc099d82bf5a8eb7d8e9ac32cb87}
+Generates a printable representation of the object. \begin{DoxyReturn}{Returns}
+Freshly-\/allocated C-\/stype string 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf General\+Number} \doxyref{}{p.}{classGeneralNumber_a071819b67064dc17754ff7cdc4964d75}.
+
+
+
+References M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+S\+\_\+\+I\+N\+\_\+\+L\+O\+NG.
+
+
+
+Referenced by main().
+
+
+
+\subsection{Member Data Documentation}
+\index{General\+Long@{General\+Long}!value@{value}}
+\index{value@{value}!General\+Long@{General\+Long}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}long General\+Long\+::value\hspace{0.3cm}{\ttfamily [private]}}\label{classGeneralLong_a3a25ceb37f06367fd5cf2b22e97289aa}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf General\+Number.\+h}\item 
+{\bf General\+Number.\+cpp}\end{DoxyCompactItemize}

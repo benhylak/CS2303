@@ -8,8 +8,8 @@
 #include "mystring.h"
 #include <stdio.h>
 
-#define MIN_ASCII_PRINTABLE 33
-#define MAX_ASCII_PRINTABLE 126
+#define MIN_ASCII_PRINTABLE 65
+#define MAX_ASCII_PRINTABLE 90
 
 /**Gets random integer between min and max
  *
@@ -44,14 +44,14 @@ char getRandomChar()
 
 char* getRandomString(int length)
 {
-    char* newStr = (char*)malloc(length*sizeof(char) +1); //size of string +1 for terminator
+    char* newStr = (char*)malloc((++length)*sizeof(char)); //size of string +1 for terminator
 
     for(int i=0; i<length-1; i++)
     {
         newStr[i] = getRandomChar();
     }
 
-    newStr[length] = '\0'; //null terminate string. Size of Array is length+1, so length is last element
+    newStr[length-1] = '\0'; //null terminate string. Size of Array is length+1, so length is last element
 
     return newStr;
 }
